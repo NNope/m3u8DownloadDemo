@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QR1-Qu-Dcd">
+                                <rect key="frame" x="220" y="107" width="60" height="30"/>
+                                <state key="normal" title="开始下载"/>
+                                <connections>
+                                    <action selector="downloadClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lKU-4Z-Ohj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzD-A7-xMX">
+                                <rect key="frame" x="320" y="107" width="60" height="30"/>
+                                <state key="normal" title="暂停下载"/>
+                                <connections>
+                                    <action selector="stopClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VKb-qI-FM3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1P-oo-aol">
+                                <rect key="frame" x="270" y="176" width="60" height="30"/>
+                                <state key="normal" title="本地播放"/>
+                                <connections>
+                                    <action selector="btnPlaycClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3mb-MP-6U0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvL-z7-hVo">
+                                <rect key="frame" x="59" y="146" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oR0-P5-Ehp">
+                                <rect key="frame" x="0.0" y="267" width="600" height="333"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="333" id="QZW-NJ-nPo"/>
+                                </constraints>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wzD-A7-xMX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="50" id="1Pc-Qo-dVl"/>
+                            <constraint firstItem="O1P-oo-aol" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="23h-Jr-S2P"/>
+                            <constraint firstItem="oR0-P5-Ehp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4a2-Bu-iks"/>
+                            <constraint firstAttribute="trailing" secondItem="oR0-P5-Ehp" secondAttribute="trailing" id="Crn-Hw-amr"/>
+                            <constraint firstItem="QR1-Qu-Dcd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="87" id="Vm1-v7-r7s"/>
+                            <constraint firstItem="O1P-oo-aol" firstAttribute="top" secondItem="QR1-Qu-Dcd" secondAttribute="bottom" constant="39" id="YAV-8x-J1h"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oR0-P5-Ehp" secondAttribute="bottom" id="You-i2-Xjk"/>
+                            <constraint firstItem="QR1-Qu-Dcd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-50" id="bWC-Rp-AiH"/>
+                            <constraint firstItem="wzD-A7-xMX" firstAttribute="top" secondItem="QR1-Qu-Dcd" secondAttribute="top" id="hii-4d-551"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnDown" destination="QR1-Qu-Dcd" id="PHh-KL-JGu"/>
+                        <outlet property="btnStop" destination="wzD-A7-xMX" id="3p3-rg-fvI"/>
+                        <outlet property="lblProgress" destination="dvL-z7-hVo" id="e9p-Xq-p2K"/>
+                        <outlet property="webView" destination="oR0-P5-Ehp" id="2zR-Bc-QCG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="235"/>
+        </scene>
+    </scenes>
+</document>
